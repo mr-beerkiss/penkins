@@ -10,7 +10,7 @@ We require:
 -  Code to send display data to the RGB Matrix (Python/C)
 -  Code to hook into Jenkins and relay the events to the subsystem powering the Matrix (Node, of course :p)
 
-See [this link](https://dl.dropboxusercontent.com/u/1974667/monkey.jpg) for an example Storyboard of how this might look.
+See [this link](https://drive.google.com/a/photobox.com/file/d/0B7geq-WIbw-2alJNMUtPdVRTZzQ/view?usp=sharing) for an example Storyboard of how this might look.
 
 ## Resources
 
