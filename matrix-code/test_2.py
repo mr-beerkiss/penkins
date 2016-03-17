@@ -1,7 +1,18 @@
-from display import display as Adadruit_RBGMatrix
 import time
+import sys
 
-matrix = Adadruit_RBGMatrix(32, 1)
+emulation = False
+
+if ( len(sys.argv) == 2 ):
+	emulation = True
+
+
+if (emulation):
+	from display import display as Adafruit_RBGMatrix
+else:
+	from rgbmatrix import Adafruit_RBGMatrix
+
+matrix = Adafruit_RBGMatrix(32, 1)
 
 def run():
 	matrix.Fill(0x00FF00)
@@ -16,4 +27,8 @@ def run():
 def kill():
 	matrix.Clear()
 
-matrix.start(run, kill)
+if ( emulation ):
+	matrix.start(run, kill)
+else:
+	run()
+
