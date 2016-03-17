@@ -8,6 +8,8 @@ import Image
 
 matrix = Adafruit_RGBmatrix(32, 1)
 
+last_status = None
+
 def runSuccess():
 	matrix.Clear()
 	animation = "fireworks"
@@ -39,6 +41,7 @@ def runRunning():
 	time.sleep(0.05)
 
 def get_dummy_build_info(jenkins, job_name):
+	global last_status
 	try:
 		job = jenkins.get_job(job_name)
 	except UnknownJob:
@@ -50,20 +53,22 @@ def get_dummy_build_info(jenkins, job_name):
 		print 'Cannot retrieve build information'
 	else:
 		status = build.get_status()
-		if status == 'SUCCESS':
-			print 'SUCCESS'
-			runSuccess()
-		elif status == 'ABORTED':
-			print 'Aborted'
-			runAborted()
-		elif status == 'FAILURE':
-			print 'Failure'
-			runFailure()
-		elif status == None and build.is_running():
-			print 'Running'
-			runRunning()
-		else:
-			print 'Unknown status'
+		if status != last_status:
+			last_status = status
+			if status == 'SUCCESS':
+				print 'SUCCESS'
+				runSuccess()
+			elif status == 'ABORTED':
+				print 'Aborted'
+				runAborted()
+			elif status == 'FAILURE':
+				print 'Failure'
+				runFailure()
+			elif status == None and build.is_running():
+				print 'Running'
+				runRunning()
+			else:
+				print 'Unknown status'
 
 if __name__ == '__main__':
 	if len(sys.argv) != 9 :
