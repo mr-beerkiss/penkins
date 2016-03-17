@@ -1,5 +1,12 @@
-from display import display as Adadruit_RBGMatrix
 import time
+import sys
+
+emulation = sys.argv[1] == "emu"
+
+if (emulation):
+	from display import display as Adadruit_RBGMatrix
+else:
+	from rgbmatrix import Adadruit_RBGMatrix
 
 matrix = Adadruit_RBGMatrix(32, 1)
 
@@ -16,4 +23,8 @@ def run():
 def kill():
 	matrix.Clear()
 
-matrix.start(run, kill)
+if ( emulation ):
+	matrix.start(run, kill)
+else:
+	run()
+
