@@ -1,24 +1,11 @@
 import time
 from multiprocessing import Process
-from MatrixPanel import MatrixPanel
 
-class TestImpl(MatrixPanel):
-	def startLoop(self):
-		self.matrix.Fill(0x0000FF)
-		time.sleep(2.0)
-		self.matrix.Clear()
-
-		for y in range(32):
-			for x in range(32):
-				self.matrix.SetPixel(x, y, 0, 0, 255)
-				time.sleep(0.025)
-
-		self.matrix.Clear()
-		return
+from screens.TestScreen import TestScreen
 
 
 def test2():
-	myTest = TestImpl(False)
+	myTest = TestScreen(True)
 	myTest.start()
 
 #test2()
