@@ -41,6 +41,7 @@ def runRunning():
 	time.sleep(0.05)
 
 def get_dummy_build_info(jenkins, job_name):
+	global last_status
 	try:
 		job = jenkins.get_job(job_name)
 	except UnknownJob:
