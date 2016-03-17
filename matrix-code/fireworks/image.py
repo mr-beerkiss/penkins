@@ -16,7 +16,7 @@ def run():
 	matrix.Clear()
 	
 	animation = "fireworks"
-    for i in range(0, 5)
+    for i in range(5):
         for x in range(0, 42):
             image = Image.open(str(x) + ".png")
             image.load()
