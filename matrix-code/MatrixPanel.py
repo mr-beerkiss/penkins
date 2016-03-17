@@ -69,4 +69,8 @@ def test2():
 p1 = Process(target=test2)
 p1.start()
 
+time.sleep(8)
+
+p1.terminate()
+
 
