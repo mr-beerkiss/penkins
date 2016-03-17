@@ -13,12 +13,11 @@ last_status = None
 def runSuccess():
 	matrix.Clear()
 	animation = "fireworks"
-	while 1==1:
-		for x in range(0, 42):
-			image = Image.open(str(x) + ".png")
-			image.load()
-			matrix.SetImage(image.im.id, 0, 0)
-			time.sleep(0.05)
+	for x in range(0, 42):
+		image = Image.open(str(x) + ".png")
+		image.load()
+		matrix.SetImage(image.im.id, 0, 0)
+		time.sleep(0.05)
 
 def runFailure():
 	matrix.Clear()
