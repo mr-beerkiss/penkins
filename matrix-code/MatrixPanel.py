@@ -8,11 +8,11 @@ class MatrixPanel:
 		self.emulation = emulation
 
 		if (self.emulation):
-			from display import display as Adafruit_RGBMatrix
+			from display import display as Adafruit_RGBmatrix
 		else:
-			from rgbmatrix import Adafruit_RGBMatrix
+			from rgbmatrix import Adafruit_RGBmatrix
 
-		self.matrix = Adafruit_RGBMatrix(32, 1)
+		self.matrix = Adafruit_RGBmatrix(32, 1)
 
 	@abc.abstractmethod
 	def startLoop(self):
