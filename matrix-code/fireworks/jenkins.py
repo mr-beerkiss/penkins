@@ -51,11 +51,14 @@ def get_dummy_build_info(jenkins, job_name):
 	else:
 		status = build.get_status()
 		if status == 'SUCCESS':
+			print 'SUCCESS'
 			run()
 		elif status == 'ABORTED':
 			print 'Aborted'
+			runAborted()
 		elif status == 'FAILURE':
 			print 'Failure'
+			runFailure()
 		elif status == None and build.is_running():
 			print 'Running'
 		else:
