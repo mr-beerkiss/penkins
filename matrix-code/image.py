@@ -1,14 +1,14 @@
 emulation = False
 
 if (emulation):
-	from display import display as Adafruit_RBGMatrix
+	from display import display as Adafruit_RBGmatrix
 else:
-	from rgbmatrix import Adafruit_RGBMatrix
+	from rgbmatrix import Adafruit_RGBmatrix
 
 import time
 import Image
 
-matrix = Adafruit_RBGMatrix(32, 1)
+matrix = Adafruit_RGBmatrix(32, 1)
 
 def run():
 	matrix.Fill(0x00FF00)
