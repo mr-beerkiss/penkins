@@ -33,3 +33,28 @@ If you wish to make some changes to the storyboard, please use [this link](https
 
 - you are ready to go:
 `python test.py`
+
+## Script retrieving information from Jenkins
+There is a Python script that we need to run in order to get real-time information from a jenkins build.
+
+A pre-requisite is to install jenkinsapi for python (and obviously python binaries):
+
+```
+sudo easy_install jenkinsapi
+```
+
+Usage of the script is the following:
+
+```
+python jenkins.py -u <username> -t <token> -j <job_name> -r <refresh_interval_in_seconds>
+```
+
+Example:
+
+```
+python jenkins.py -u GITHUB_USERNAME -t YOUR_TOKEN -j hackathon-penkins -r 1
+```
+
+The API Token can be found in http://ci.boxtop.photobox.com/user/GITHUB_USERNAME/configure
+
+Maybe in the future, we can configure the Jenkins job to be the one sending updates to a webservice running on the Raspberry Pi, instead of having a script querying jenkins every X seconds.
