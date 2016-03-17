@@ -1,1 +1,2 @@
-print "Hello Penkins team"
+print "Hello world"
+print "Penkins team are awesome"
