@@ -25,13 +25,13 @@ class MatrixPanel:
 
 	def start(self):
 		if (self.emulation):
-			self.process = Process(target=self.matrix.start, args=(self.startLoop, self.exitLoop))
-			#self.matrix.start(self.startLoop, self.exitLoop)
+			#self.process = Process(target=self.matrix.start, args=(self.startLoop, self.exitLoop))
+			self.matrix.start(self.startLoop, self.exitLoop)
 		else:
-			self.process = Process(target=self.startLoop)
-			#self.startLoop();
+			#self.process = Process(target=self.startLoop)
+			self.startLoop();
 
-		self.process.start()
+		#self.process.start()
 		#self.process.join()
 
 		print "Returning from start"
@@ -39,7 +39,7 @@ class MatrixPanel:
 		return
 
 	def end(self):
-		self.process.terminate()
+		#self.process.terminate()
 		self.exitLoop()
 
 
@@ -60,14 +60,13 @@ class TestImpl(MatrixPanel):
 		return
 
 
-myTest = TestImpl(False)
-myTest.start()
+def test2():
+	myTest = TestImpl(False)
+	myTest.start()
 
-time.sleep(8)
-print "Sleeping time is over!"
-myTest.end()
+#test2()
 
-
-
+p1 = Process(target=test2)
+p1.start()
 
 
