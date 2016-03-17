@@ -1,8 +1,14 @@
-from display import display as Adadruit_RBGMatrix
+emulation = False
+
+if (emulation):
+	from display import display as Adafruit_RBGMatrix
+else:
+	from rgbmatrix import Adafruit_RGBMatrix
+
 import time
 import Image
 
-matrix = Adadruit_RBGMatrix(32, 1)
+matrix = Adafruit_RBGMatrix(32, 1)
 
 def run():
 	matrix.Fill(0x00FF00)
