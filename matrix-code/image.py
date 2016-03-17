@@ -15,7 +15,7 @@ def run():
 	time.sleep(2.0)
 	matrix.Clear()
 	
-	image = Image.open("jenkins.png")
+	image = Image.open("fireworks.png")
 	image.load()
 	for n in range(32, -image.size[0], -1):
 		matrix.SetImage(image.im.id, n, 1)
