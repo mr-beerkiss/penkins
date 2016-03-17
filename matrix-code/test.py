@@ -1,46 +1,31 @@
-#import Image
-#import ImageDraw
-from PIL import Image, ImageDraw
-
-from display import display as Adadruit_RBGMatrix
 import time
+from multiprocessing import Process
+from MatrixPanel import MatrixPanel
 
-width = 64
-height = 32
-matrix = Adadruit_RBGMatrix(32, 2)
-fps = 20
+class TestImpl(MatrixPanel):
+	def startLoop(self):
+		self.matrix.Fill(0x0000FF)
+		time.sleep(2.0)
+		self.matrix.Clear()
 
-currentTime = 0.0
-prevTime = 0.0
+		for y in range(32):
+			for x in range(32):
+				self.matrix.SetPixel(x, y, 0, 0, 255)
+				time.sleep(0.025)
 
-print "Width: ", width
-print "Height: ", height
-
-
-image = Image.new('RGB', (width, height))
-draw = ImageDraw.Draw(image)
-
-def run():
-	while True:
-
-		global prevTime
-
-		draw.rectangle((0, 0, width, height), fill=(255, 0, 0))
-
-		
-		currentTime = time.time()
-		timeDelta = (1.0/fps) - (currentTime - prevTime)
-
-		if(timeDelta > 0.0):
-			time.sleep(timeDelta)
-		prevTime = currentTime
-
-		matrix.SetImage(image, 0, 0)
+		self.matrix.Clear()
+		return
 
 
-def kill():
-	print "Kill command"
-	matrix.Clear()
+def test2():
+	myTest = TestImpl(False)
+	myTest.start()
 
-time.sleep(5)
-matrix.start(run, kill)
+#test2()
+
+p1 = Process(target=test2)
+p1.start()
+
+time.sleep(8)
+
+p1.terminate()
