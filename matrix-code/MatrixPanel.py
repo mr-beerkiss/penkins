@@ -28,10 +28,10 @@ class MatrixPanel:
 			self.process = Process(target=self.matrix.start, args=(self.startLoop, self.exitLoop))
 			#self.matrix.start(self.startLoop, self.exitLoop)
 		else:
-			#self.process = Process(target=self.startLoop)
-			self.startLoop();
+			self.process = Process(target=self.startLoop)
+			#self.startLoop();
 
-		#self.process.start()
+		self.process.start()
 		#self.process.join()
 
 		print "Returning from start"
@@ -39,7 +39,7 @@ class MatrixPanel:
 		return
 
 	def end(self):
-		#self.process.terminate()
+		self.process.terminate()
 		self.exitLoop()
 
 
