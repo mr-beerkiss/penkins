@@ -18,7 +18,7 @@ def run():
 	animation = "fireworks"
 
 	for x in range(0, 42):
-		image = Image.open(x + ".png")
+		image = Image.open(str(x) + ".png")
 		image.load()
 		matrix.SetImage(image.im.id, 0, 0)
 		time.sleep(0.3)
