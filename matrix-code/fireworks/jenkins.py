@@ -8,6 +8,8 @@ import Image
 
 matrix = Adafruit_RGBmatrix(32, 1)
 
+last_status = 'None'
+
 def runSuccess():
 	matrix.Clear()
 	animation = "fireworks"
