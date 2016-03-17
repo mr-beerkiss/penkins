@@ -8,11 +8,11 @@ if ( len(sys.argv) == 2 ):
 
 
 if (emulation):
-	from display import display as Adafruit_RGBMatrix
+	from display import display as Adafruit_RGBmatrix
 else:
-	from rgbmatrix import Adafruit_RGBMatrix
+	from rgbmatrix import Adafruit_RGBmatrix
 
-matrix = Adafruit_RBGMatrix(32, 1)
+matrix = Adafruit_RGBmatrix(32, 1)
 
 def run():
 	matrix.Fill(0x00FF00)
