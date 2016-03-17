@@ -1,14 +1,18 @@
 import time
 import sys
 
-emulation = sys.argv[1] == "emu"
+emulation = False
+
+if ( len(sys.argv) == 2 ):
+	emulation = True
+
 
 if (emulation):
-	from display import display as Adadruit_RBGMatrix
+	from display import display as Adafruit_RBGMatrix
 else:
-	from rgbmatrix import Adadruit_RBGMatrix
+	from rgbmatrix import Adafruit_RBGMatrix
 
-matrix = Adadruit_RBGMatrix(32, 1)
+matrix = Adafruit_RBGMatrix(32, 1)
 
 def run():
 	matrix.Fill(0x00FF00)
