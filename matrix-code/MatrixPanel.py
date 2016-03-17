@@ -59,7 +59,7 @@ class TestImpl(MatrixPanel):
 		return
 
 
-myTest = TestImpl(True)
+myTest = TestImpl(False)
 myTest.start()
 
 time.sleep(8)
