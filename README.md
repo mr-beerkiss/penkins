@@ -22,6 +22,18 @@ If you wish to make some changes to the storyboard, please use [this link](https
 -  [Python on Code Academy](https://www.codecademy.com/learn/python)
 -  [API client of Jenkins API written in Go](https://github.com/yosida95/golang-jenkins)
 
+## How to start
+
+- run commands:
+`sudo apt-get install build-essential g++`
+`sudo apt-get install python-dev`
+`sudo apt-get install python-imaging`
+`sudo apt-get install python-tk`
+`sudo apt-get install python-imaging-tk`
+
+- you are ready to go:
+`python test.py`
+
 ## Script retrieving information from Jenkins
 There is a Python script that we need to run in order to get real-time information from a jenkins build.
 
