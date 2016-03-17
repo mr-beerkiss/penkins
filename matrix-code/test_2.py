@@ -8,9 +8,9 @@ if ( len(sys.argv) == 2 ):
 
 
 if (emulation):
-	from display import display as Adafruit_RBGMatrix
+	from display import display as Adafruit_RGBMatrix
 else:
-	from rgbmatrix import Adafruit_RBGMatrix
+	from rgbmatrix import Adafruit_RGBMatrix
 
 matrix = Adafruit_RBGMatrix(32, 1)
 
