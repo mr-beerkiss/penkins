@@ -15,11 +15,11 @@ def run():
 	time.sleep(2.0)
 	matrix.Clear()
 	
-	image = Image.open("jenkins.png")
+	image = Image.open("fireworks.png")
 	image.load()
-	for n in range(32, -image.size[0], -1):
-		matrix.SetImage(image.im.id, n, 1)
-		time.sleep(0.1)
+	#for n in range(32, -image.size[0], -1):
+	matrix.SetImage(image.im.id, 0, 0)
+	time.sleep(1.0)
 
 def kill():
 	matrix.Clear()
