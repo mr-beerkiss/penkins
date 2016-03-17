@@ -1,11 +1,18 @@
 import time
+import sys
+
 from multiprocessing import Process
 
 from screens.TestScreen import TestScreen
 
+emulation = False
+
+if (len(sys.argv) > 1):
+	emulation = True
+
 
 def test2():
-	myTest = TestScreen(True)
+	myTest = TestScreen(emulation)
 	myTest.start()
 
 #test2()
