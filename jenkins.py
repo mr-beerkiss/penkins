@@ -16,12 +16,15 @@ def get_dummy_build_info(jenkins, job_name):
             print 'Aborted'
         elif status == 'FAILURE':
             print 'Failure'
+        elif status == None and build.is_running():
+            print 'Running'
         else:
             print 'Unknown status'
 
 if __name__ == '__main__':
     if len(sys.argv) != 7 :
-        print 'Error. Usage -> jenkins.py -u <username> -t <token> -j <job_name>'
+        print 'Error. Usage: '
+        print ' python jenkins.py -u <username> -t <token> -j <job_name>'
         sys.exit(2)
     else:
         username = str(sys.argv[2])
