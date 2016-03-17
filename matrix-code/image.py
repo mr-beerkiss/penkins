@@ -18,7 +18,7 @@ def run():
 	image = Image.open("jenkins.png")
 	image.load()
 	for n in range(32, -image.size[0], -1):
-		matrix.SetImage(image, n, 1)
+		matrix.SetImage(image.im.id, n, 1)
 		time.sleep(0.1)
 
 def kill():
