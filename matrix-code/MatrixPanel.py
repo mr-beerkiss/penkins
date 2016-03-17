@@ -31,7 +31,7 @@ class MatrixPanel:
 			self.process = Process(target=self.startLoop)
 
 		self.process.start()
-		#self.process.join()
+		self.process.join()
 
 		print "Returning from start"
 
