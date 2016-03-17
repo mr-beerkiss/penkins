@@ -33,6 +33,7 @@ class display():
         """
         Takes an image, copies it then scales it and displays
         """
+        print img
         self.image.paste(
             img.copy().convert('RGB').resize(
              [img.width * self.scale, img.height * self.scale],
