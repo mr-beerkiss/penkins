@@ -52,7 +52,7 @@ def get_dummy_build_info(jenkins, job_name):
 		status = build.get_status()
 		if status == 'SUCCESS':
 			print 'SUCCESS'
-			run()
+			runSuccess()
 		elif status == 'ABORTED':
 			print 'Aborted'
 			runAborted()
@@ -61,6 +61,7 @@ def get_dummy_build_info(jenkins, job_name):
 			runFailure()
 		elif status == None and build.is_running():
 			print 'Running'
+			runRunning()
 		else:
 			print 'Unknown status'
 
