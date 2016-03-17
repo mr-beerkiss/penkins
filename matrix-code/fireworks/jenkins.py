@@ -8,7 +8,7 @@ import Image
 
 matrix = Adafruit_RGBmatrix(32, 1)
 
-last_status = 'None'
+last_status = None
 
 def runSuccess():
 	matrix.Clear()
@@ -53,6 +53,7 @@ def get_dummy_build_info(jenkins, job_name):
 	else:
 		status = build.get_status()
 		if status != last_status:
+			last_status = status
 			if status == 'SUCCESS':
 				print 'SUCCESS'
 				runSuccess()
@@ -67,7 +68,6 @@ def get_dummy_build_info(jenkins, job_name):
 				runRunning()
 			else:
 				print 'Unknown status'
-			last_status = status
 
 if __name__ == '__main__':
 	if len(sys.argv) != 9 :
