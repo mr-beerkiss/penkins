@@ -46,4 +46,3 @@ python jenkins.py -u GITHUB_USERNAME -t YOUR_TOKEN -j hackathon-penkins -r 1
 The API Token can be found in http://ci.boxtop.photobox.com/user/GITHUB_USERNAME/configure
 
 Maybe in the future, we can configure the Jenkins job to be the one sending updates to a webservice running on the Raspberry Pi, instead of having a script querying jenkins every X seconds.
->>>>>>> 991963a... Some error management
