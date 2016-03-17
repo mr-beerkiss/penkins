@@ -21,7 +21,7 @@ def run():
 		image = Image.open(str(x) + ".png")
 		image.load()
 		matrix.SetImage(image.im.id, 0, 0)
-		time.sleep(0.02)
+		time.sleep(0.05)
 
 def kill():
 	matrix.Clear()
