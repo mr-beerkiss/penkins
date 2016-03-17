@@ -24,4 +24,8 @@ def run():
 def kill():
 	matrix.Clear()
 
-matrix.start(run, kill)
+if (emulation):
+	matrix.start(run, kill)
+else:
+	run()
+
