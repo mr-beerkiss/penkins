@@ -11,6 +11,7 @@ matrix = Adafruit_RGBmatrix(32, 1)
 last_status = None
 animation_time = 0.1
 blink_amount = 10
+jenkins_version = None
 
 def runSuccess():
 	matrix.Clear()
@@ -95,6 +96,7 @@ if __name__ == '__main__':
 
 	jenkins_url = 'http://ci.boxtop.photobox.com'
 	jenkins = Jenkins(jenkins_url, username = username, password = token)
+	jenkins_version = jenkins.version
 
 	while 1==1:
 		get_dummy_build_info(jenkins, job_name)
