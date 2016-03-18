@@ -9,7 +9,7 @@ import Image
 matrix = Adafruit_RGBmatrix(32, 1)
 
 last_status = None
-animation_time = 0.02
+animation_time = 0.1
 
 def runSuccess():
 	matrix.Clear()
