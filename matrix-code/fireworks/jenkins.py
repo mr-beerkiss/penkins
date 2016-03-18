@@ -9,34 +9,45 @@ import Image
 matrix = Adafruit_RGBmatrix(32, 1)
 
 last_status = None
+animation_time = 0.02
 
 def runSuccess():
 	matrix.Clear()
 	animation = "fireworks"
-	for x in range(0, 42):
-		image = Image.open(str(x) + ".png")
-		image.load()
-		matrix.SetImage(image.im.id, 0, 0)
-		time.sleep(0.05)
+	for i in range(5):
+		for x in range(0, 42):
+			image = Image.open(str(x) + ".png")
+			image.load()
+			matrix.SetImage(image.im.id, 0, 0)
+			time.sleep(0.05)
 
 def runFailure():
 	matrix.Clear()
 	image = Image.open("failure.png")
 	image.load()
-	matrix.SetImage(image.im.id, 0, 0)
-	time.sleep(0.05)
+
+	for x in range(5):
+		matrix.SetImage(image.im.id, 0, 0)	
+		time.sleep(animation_time)
+		matrix.Clear()
+		time.sleep(animation_time)
 
 def runAborted():
 	matrix.Clear()
 	image = Image.open("aborted.png")
 	image.load()
-	matrix.SetImage(image.im.id, 0, 0)
-	time.sleep(0.05)
+	
+	for x in range(5):
+		matrix.SetImage(image.im.id, 0, 0)	
+		time.sleep(animation_time)
+		matrix.Clear()
+		time.sleep(animation_time)
 
 def runRunning():
 	matrix.Clear()
 	image = Image.open("running.png")
 	image.load()
+
 	matrix.SetImage(image.im.id, 0, 0)
 	time.sleep(0.05)
 
