@@ -25,7 +25,7 @@ def runSuccess():
 def runFailure():
 	matrix.Clear()
 	for i in range(5):
-		for x in range(0, 42):
+		for x in range(1, 18):
 			image = Image.open(str(x) + "fail.png")
 			image.load()
 			matrix.SetImage(image.im.id, 0, 0)
