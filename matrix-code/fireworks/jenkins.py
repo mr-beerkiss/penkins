@@ -15,7 +15,6 @@ jenkins_version = None
 
 def runSuccess():
 	matrix.Clear()
-	animation = "fireworks"
 	for i in range(5):
 		for x in range(0, 42):
 			image = Image.open(str(x) + ".png")
@@ -25,14 +24,12 @@ def runSuccess():
 
 def runFailure():
 	matrix.Clear()
-	image = Image.open("failure.png")
-	image.load()
-
-	for x in range(blink_amount):
-		matrix.SetImage(image.im.id, 0, 0)	
-		time.sleep(animation_time)
-		matrix.Clear()
-		time.sleep(animation_time)
+	for i in range(5):
+		for x in range(0, 42):
+			image = Image.open(str(x) + "fail.png")
+			image.load()
+			matrix.SetImage(image.im.id, 0, 0)
+			time.sleep(0.05)
 
 def runAborted():
 	matrix.Clear()
