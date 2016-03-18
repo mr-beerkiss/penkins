@@ -10,6 +10,7 @@ matrix = Adafruit_RGBmatrix(32, 1)
 
 last_status = None
 animation_time = 0.1
+blink_amount = 10
 
 def runSuccess():
 	matrix.Clear()
@@ -26,7 +27,7 @@ def runFailure():
 	image = Image.open("failure.png")
 	image.load()
 
-	for x in range(5):
+	for x in range(blink_amount):
 		matrix.SetImage(image.im.id, 0, 0)	
 		time.sleep(animation_time)
 		matrix.Clear()
@@ -37,7 +38,7 @@ def runAborted():
 	image = Image.open("aborted.png")
 	image.load()
 	
-	for x in range(5):
+	for x in range(blink_amount):
 		matrix.SetImage(image.im.id, 0, 0)	
 		time.sleep(animation_time)
 		matrix.Clear()
